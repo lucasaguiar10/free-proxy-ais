@@ -61,8 +61,9 @@ class FreeProxy:
         switch = {'yes': True, 'no': False}
         google_criteria = True if self.google is None else self.google == switch.get(
             row_elements[5].text_content())
-        https_criteria = True if self.schema == 'http' else row_elements[6].text_content(
-        ).lower() == 'yes'
+        https_criteria = True
+        # https_criteria = True if self.schema == 'http' else row_elements[6].text_content(
+        # ).lower() == 'yes'
         return country_criteria and elite_criteria and anonym_criteria and google_criteria and https_criteria
 
     def get(self, repeat=False):
